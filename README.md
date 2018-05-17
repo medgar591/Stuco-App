@@ -2,17 +2,25 @@
 ﻿This is the documentation for the App, as I leave it now. I will do my best to make everything as simple as possible.
 
 What works:
+
 	-The UI and navigation between pages
+	
 	-Data Storage
 
 What doesn't work:
+
 	-Updating pages (ie unlocking the button when actually on campus)
+	
 		+This will require binding and adding INotifyPropertyChanged. 
 
 What isn't here:
+
 	-Location Services
+	
 	-Login Services
+	
 	-Calendar Services
+	
 	-Updating someone's score
 
 
@@ -22,16 +30,25 @@ You can also note that almost everything is done in C#. That was intentional. Th
 General Overview:
 
 -MD Folder - Contains the pages necessary to manage a Master Detail navigation system
+
 	-MDDetail - In charge of presenting pages (details) to the user
+	
 	-MDMaster - In charge of the hamburger menu which the user can navigate with
+	
 	-MDItem - Special object for holding the pages available from the menu
+	
 	-MDPage - The page which makes the MasterDetail work, and controls navigation
+	
 	-Notice that lots of the titles in these classes are "Title X", this was for debugging while I tracked down which title is actually shown. This is the MDPage title "Stuco"
 
 -Pages Folder - Contains all of the important pages that actually get shown in the app
+
 	-AboutPage - Page with info about the people who have helped with the project
+	
 	-HomePage - The main page which will have the calendar, button, and user info
+	
 	-LoadingPage - A general purpose loading page to be shown. May need a redesign
+	
 	-SettingsPage - A page which will hold any settings. Currently only includes a switch to enable the button on the homepage (non-functional)
 
 
