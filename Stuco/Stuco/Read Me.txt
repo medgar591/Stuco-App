@@ -1,0 +1,46 @@
+﻿This is the documentation for the App, as I leave it now. I will do my best to make everything as simple as possible.
+
+What works:
+	-The UI and navigation between pages
+	-Data Storage
+
+What doesn't work:
+	-Updating pages (ie unlocking the button when actually on campus)
+		+This will require binding and adding INotifyPropertyChanged. 
+
+What isn't here:
+	-Location Services
+	-Login Services
+	-Calendar Services
+	-Updating someone's score
+
+
+I will also be including very detailed, and mostly complete information about what every method and line does, because I know that there are no explanations.
+You can also note that almost everything is done in C#. That was intentional. There are barely any lowest level examples for Xamarin that don't use the much easier to read C#. Now here is one. 
+
+General Overview:
+
+-MD Folder - Contains the pages necessary to manage a Master Detail navigation system
+	-MDDetail - In charge of presenting pages (details) to the user
+	-MDMaster - In charge of the hamburger menu which the user can navigate with
+	-MDItem - Special object for holding the pages available from the menu
+	-MDPage - The page which makes the MasterDetail work, and controls navigation
+	-Notice that lots of the titles in these classes are "Title X", this was for debugging while I tracked down which title is actually shown. This is the MDPage title "Stuco"
+
+-Pages Folder - Contains all of the important pages that actually get shown in the app
+	-AboutPage - Page with info about the people who have helped with the project
+	-HomePage - The main page which will have the calendar, button, and user info
+	-LoadingPage - A general purpose loading page to be shown. May need a redesign
+	-SettingsPage - A page which will hold any settings. Currently only includes a switch to enable the button on the homepage (non-functional)
+
+
+
+
+Explanations of principles in use:
+MasterDetail has two pages at a time: a Master Page, and a Detail Page. The Master page is the menu and stays constant. The Detail Page is more dynamic and shows what the user will care about
+The Master Page MUST have a title or it will start throwing errors. 
+
+Application.Current.Properties is a dictionary that has persistent data storage. It should store the data on its own, but only when the app is put to sleep, which doesn't occur if you click the red stop button
+It stores things as a key (String) and value (Object) pair. 
+Application.Current.Properties["Key"] = object
+
