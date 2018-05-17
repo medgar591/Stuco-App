@@ -30,7 +30,6 @@ You can also note that almost everything is done in C#. That was intentional. Th
 General Overview:
 
 -MD Folder - Contains the pages necessary to manage a Master Detail navigation system
-
 	-MDDetail - In charge of presenting pages (details) to the user
 	
 	-MDMaster - In charge of the hamburger menu which the user can navigate with
@@ -55,9 +54,13 @@ General Overview:
 
 
 Explanations of principles in use:
-MasterDetail has two pages at a time: a Master Page, and a Detail Page. The Master page is the menu and stays constant. The Detail Page is more dynamic and shows what the user will care about
+
+MasterDetail has two pages at a time: a Master Page, and a Detail Page. The Master page is the menu and stays constant. The Detail Page is more dynamic and shows what the user will care about.
+
 The Master Page MUST have a title or it will start throwing errors. 
 
 Application.Current.Properties is a dictionary that has persistent data storage. It should store the data on its own, but only when the app is put to sleep, which doesn't occur if you click the red stop button
+
 It stores things as a key (String) and value (Object) pair. 
+
 Application.Current.Properties["Key"] = object
